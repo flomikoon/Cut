@@ -120,9 +120,9 @@ public class Cut {
 
     private void writeInFile(File file, String strout) {
         try {
-            FileWriter write = new FileWriter(file);
-            write.write(strout);
-            write.write("\r\n");
+            FileWriter write = new FileWriter(file , true);
+            write.append(strout);
+            write.append("\n");
             write.close();
         } catch (Exception e) {
             System.out.print(e.toString());
