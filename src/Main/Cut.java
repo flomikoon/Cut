@@ -68,10 +68,10 @@ public class Cut {
                 }
             }
             if (!outfile.equals("")) {
-                assert false;
+
                 writeInFile(new File(outfile), res.toString());
             } else {
-                assert false;
+
                 System.out.print(res.toString());
                 System.out.print("\n");
             }

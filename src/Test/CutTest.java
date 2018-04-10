@@ -1,5 +1,6 @@
 package Test;
 
+import Main.Cut;
 import Main.Help;
 import org.junit.jupiter.api.Test;
 
@@ -78,8 +79,24 @@ class CutTest {
 
     @org.junit.jupiter.api.Test
     void FixStrTest() {
-
+        assertEquals("t’" , Help.FixStr("1-3" , true , false , "It’s no use to make a decision today"));
+        assertEquals("I missed" , Help.FixStr("-2" , false, true , "I missed my flight!"));
+        assertEquals("flight!" , Help.FixStr("1-" , false , true , "I missed my flight!"));
+        assertEquals("truck has" , Help.FixStr("1-3" , false , true , "The truck has stuck in the mud"));
+        assertEquals("The" , Help.FixStr("-3" , true , false , "The truck has stuck in the mud"));
     }
 
+    @org.junit.jupiter.api.Test
+    void MainTest() {
+        String[] str = {"cut" , "-w" , "-o" ,"files/test3.txt"  , "testfile/input3.txt" , "-4"};
+        Cut.main(str);
+        assertFileContent("D:/Учеба/cut/files/test3.txt" , "D:/Учеба/cut/testfile/output3-3.txt");
+        String[] str1 = {"cut" , "-c" , "-o" ,"files/test4.txt"  , "testfile/input4.txt" , "3-"};
+        Cut.main(str1);
+        assertFileContent("files/test4.txt" , "testfile/output4-4.txt");
+        String[] str2 = {"cut" , "-w" , "-o" ,"D:/Учеба/cut/files/test5.txt"  , "D:/Учеба/cut/testfile/input5.txt" , "2-5"};
+        Cut.main(str2);
+        assertFileContent("files/test5.txt" , "testfile/output5-5.txt");
+    }
 
 }

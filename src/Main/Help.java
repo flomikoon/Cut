@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 public class Help {
 
-    static String FixStr(String str, boolean c, boolean w, String s) {
+    public static String FixStr(String str, boolean c, boolean w, String s) {
         int k = range(str)[0];
         int n = range(str)[1];
 
