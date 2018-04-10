@@ -5,7 +5,7 @@ import java.io.FileWriter;
 
 public class Help {
 
-    static void FixStr(String str, boolean c, boolean w, String s, String outfilename, File out) {
+    static String FixStr(String str, boolean c, boolean w, String s) {
         int k = range(str)[0];
         int n = range(str)[1];
 
@@ -15,17 +15,10 @@ public class Help {
         if (w) {
             s = lineW(s, k, n);
         }
-
-
-        if (!outfilename.equals("")) {
-            writeInFile(out, s);
-        } else {
-            System.out.print(s);
-            System.out.print("\n");
-        }
+        return  s;
     }
 
-    private static int[] range(String str){
+    public static int[] range(String str){
         int k = 0;
         int n = 0;
         int count = 0 ;
@@ -58,9 +51,9 @@ public class Help {
     }
 
 
-    private static void writeInFile(File file, String strout) {
+    public static void writeInFile(File file, String strout) {
         try {
-            FileWriter write = new FileWriter(file , true);
+            FileWriter write = new FileWriter(file);
             write.append(strout);
             write.append("\n");
             write.close();
@@ -70,7 +63,7 @@ public class Help {
     }
 
 
-    private static String lineC(String str, int k, int n) {
+    public static String lineC(String str, int k, int n) {
         if (k != 0 && n == 0) {
             if (str.length() < k){
                 k = str.length();
@@ -84,7 +77,7 @@ public class Help {
         return str;
     }
 
-    private static String lineW(String str, int k, int n) {
+    public static String lineW(String str, int k, int n) {
         if (k != 0 && n == 0) {
             String[] list = str.split(" ");
             StringBuilder strBuilder = new StringBuilder();
@@ -92,7 +85,7 @@ public class Help {
                 strBuilder.append(list[i]);
                 strBuilder.append(" ");
             }
-            str = strBuilder.toString();
+            str = strBuilder.toString().trim();
         } else if (k == 0 && n != 0) {
             String[] list = str.split(" ");
             StringBuilder strBuilder = new StringBuilder();
@@ -106,7 +99,7 @@ public class Help {
                     strBuilder.append(" ");
                 }
             }
-            str = strBuilder.toString();
+            str = strBuilder.toString().trim();
         } else {
             String[] list = str.split(" ");
             StringBuilder strBuilder = new StringBuilder();
@@ -114,7 +107,7 @@ public class Help {
                 strBuilder.append(list[i]);
                 strBuilder.append(" ");
             }
-            str = strBuilder.toString();
+            str = strBuilder.toString().trim();
         }
 
         return str;
