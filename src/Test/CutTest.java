@@ -14,7 +14,7 @@ import static Main.Help.*;
 import static org.junit.jupiter.api.Assertions.*;
 class CutTest {
 
-    private static void assertFileContent(String name, String name2) {
+    private static void assertFile(String name, String name2) {
         StringBuilder content = new StringBuilder();
         StringBuilder content2 = new StringBuilder();
         try {
@@ -60,10 +60,10 @@ class CutTest {
     void WriteInFileTest() {
         File out = new File("files/test1.txt");
         Help.writeInFile(out, "Hello world");
-        assertFileContent("files/test1.txt" , "testfile/input1.txt");
+        assertFile("files/test1.txt" , "testfile/input1.txt");
         File out1 = new File("files/test2.txt");
         Help.writeInFile(out1, "It no use to make a decision today" + "\n" + "Hello world" + "\n" + "Poly");
-        assertFileContent("files/test2.txt" , "testfile/input2.txt");
+        assertFile("files/test2.txt" , "testfile/input2.txt");
 
     }
 
@@ -90,13 +90,13 @@ class CutTest {
     void MainTest() {
         String[] str = {"cut" , "-w" , "-o" ,"files/test3.txt"  , "testfile/input3.txt" , "-4"};
         Cut.main(str);
-        assertFileContent("D:/Учеба/cut/files/test3.txt" , "D:/Учеба/cut/testfile/output3-3.txt");
+        assertFile("D:/Учеба/cut/files/test3.txt" , "D:/Учеба/cut/testfile/output3-3.txt");
         String[] str1 = {"cut" , "-c" , "-o" ,"files/test4.txt"  , "testfile/input4.txt" , "3-"};
         Cut.main(str1);
-        assertFileContent("files/test4.txt" , "testfile/output4-4.txt");
+        assertFile("files/test4.txt" , "testfile/output4-4.txt");
         String[] str2 = {"cut" , "-w" , "-o" ,"D:/Учеба/cut/files/test5.txt"  , "D:/Учеба/cut/testfile/input5.txt" , "2-5"};
         Cut.main(str2);
-        assertFileContent("files/test5.txt" , "testfile/output5-5.txt");
+        assertFile("files/test5.txt" , "testfile/output5-5.txt");
     }
 
 }
