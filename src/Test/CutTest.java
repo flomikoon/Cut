@@ -90,11 +90,11 @@ class CutTest {
     void MainTest() {
         String[] str = {"cut" , "-w" , "-o" ,"files/test3.txt"  , "testfile/input3.txt" , "-4"};
         Cut.main(str);
-        assertFile("D:/Учеба/cut/files/test3.txt" , "D:/Учеба/cut/testfile/output3-3.txt");
+        assertFile("files/test3.txt" , "testfile/output3-3.txt");
         String[] str1 = {"cut" , "-c" , "-o" ,"files/test4.txt"  , "testfile/input4.txt" , "3-"};
         Cut.main(str1);
         assertFile("files/test4.txt" , "testfile/output4-4.txt");
-        String[] str2 = {"cut" , "-w" , "-o" ,"D:/Учеба/cut/files/test5.txt"  , "D:/Учеба/cut/testfile/input5.txt" , "2-5"};
+        String[] str2 = {"cut" , "-w" , "-o" ,"files/test5.txt"  , "testfile/input5.txt" , "2-5"};
         Cut.main(str2);
         assertFile("files/test5.txt" , "testfile/output5-5.txt");
     }
