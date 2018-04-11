@@ -28,9 +28,11 @@ public class Cut {
                 outfile = args[i + 1];
             }
 
-            for (int j = 0; j < args[i].length(); j++) {
-                if (args[i].charAt(j) == '-') {
-                    str = args[i];
+            if (!args[i].equals("-c") && !args[i].equals("-w") && !args[i].equals("-o") && !args[i - 1].equals("-o") ){
+                for (int j = 0; j < args[i].length(); j++) {
+                    if (args[i].charAt(j) == '-') {
+                        str = args[i];
+                    }
                 }
             }
 
