@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 public class Pars {
 
@@ -11,7 +11,7 @@ public class Pars {
     private Integer k = null;
     private Integer n = null;
 
-    Pars(String[] args) {
+    public Pars(String[] args) {
         for (int i = 1; i < args.length; i++) {
             if (args[i].equals("-o")) {
                 outfile = args[i + 1];
