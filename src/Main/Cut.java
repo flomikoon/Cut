@@ -34,7 +34,7 @@ public class Cut {
             try {
                 in = new Scanner(path);
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.print("Файл не найлен");
             }
         }
 
