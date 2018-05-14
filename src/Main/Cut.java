@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
+import static main.Help.fixStr;
 import static main.Help.writeClear;
 import static main.Help.writeStrInFile;
 
