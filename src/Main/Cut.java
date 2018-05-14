@@ -1,5 +1,4 @@
-package Main;
-
+package main;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-import static Main.Help.*;
+import static main.Help.writeClear;
+import static main.Help.writeStrInFile;
 
 public class Cut {
 
@@ -29,9 +29,8 @@ public class Cut {
         }
 
         Scanner in = new Scanner(System.in);
-
         if (h.getO()) {
-            Path path = Paths.get(h.getInPutFileName());
+            Path path = Paths.get(new Pars(args).getInPutFileName());
             try {
                 in = new Scanner(path);
             } catch (IOException e) {
