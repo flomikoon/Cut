@@ -1,15 +1,15 @@
 package Test;
 
-import main.Cut;
-import main.Help;
+import Main.Cut;
+import Main.Help;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static main.Help.lineC;
-import static main.Help.lineW;
+import static Main.Help.lineC;
+import static Main.Help.lineW;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CutTest {

@@ -29,12 +29,13 @@ public class Cut {
         }
 
         Scanner in = new Scanner(System.in);
+
         if (h.getO()) {
-            Path path = Paths.get(new Pars(args).getInPutFileName());
+            Path path = Paths.get(h.getInPutFileName());
             try {
                 in = new Scanner(path);
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.print("Файл не найлен");
             }
         }
 

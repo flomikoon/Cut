@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -25,7 +25,7 @@ public class Help {
         }
     }
 
-    static void writeStrInFile(boolean o, File file, String strout) {
+    public static void writeStrInFile(boolean o, File file, String strout) {
         if (!o) {
             writeInFile(file, strout);
         } else {
